@@ -10,7 +10,60 @@ body {
     align-items: center;
     height: 100vh;
   }
+  /* ENVELOPE ANIMATION */
+.envelope-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
   
+  .envelope {
+    width: 200px;
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+  }
+  
+  .envelope .flap {
+    width: 100%;
+    height: 100%;
+    background: #f48fb1;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform 0.7s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .envelope .letter {
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+
+  }
+  
+  .envelope.open .flap {
+    transform: rotateX(-180deg);
+  }
   
   .card {
     background-color: rgba(255, 255, 255, 0.8); 

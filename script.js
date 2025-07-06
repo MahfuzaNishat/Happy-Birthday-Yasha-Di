@@ -77,3 +77,15 @@ function startConfetti() {
     player.playVideo();
   }
 }
+document.querySelector('.envelope').addEventListener('click', () => {
+    const envelope = document.querySelector('.envelope');
+    envelope.classList.add('open');
+  
+    // Wait for animation then show card
+    setTimeout(() => {
+      document.getElementById('envelope').style.display = 'none';
+      document.getElementById('card').style.display = 'block';
+      //startConfetti(); // if you want it to burst after opening
+    }, 1000);
+  });
+  
