@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: url('imag/backgroud.jpg.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(90px); 
+    -webkit-backdrop-filter: blur(10px); 
+  
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  
+   
+    background: linear-gradient(135deg, #1a1a40, #6b0f3b, #ff8a5c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
+  .message {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #ff1493;
+  }
+  
+  .balloons {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+  }
+  
+  .balloon {
+    width: 30px;
+    height: 40px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+  }
+  
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #aaa;
+    transform: translateX(-50%);
+  }
+  
+  .pink { background: #ffb6c1; animation-delay: 0s; }
+  .yellow { background: #fff8b5; animation-delay: 1s; }
+  .blue { background: #add8e6; animation-delay: 2s; }
+  .green { background: #baffc9; animation-delay: 3s; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  #confetti-canvas {
+    position: fixed;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  
